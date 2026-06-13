@@ -238,26 +238,62 @@ function renderContact() {
     </div>`;
 }
 
+let fuse = null;
+
+function initFuse() {
+  if (typeof Fuse === "undefined") return false;
+  fuse = new Fuse(keywords, {
+    keys: ["kw", "kwAr"],
+    threshold: 0.35,
+    distance: 100,
+    includeScore: true,
+    minMatchCharLength: 2,
+  });
+  return true;
+}
+
+function highlightText(text, term) {
+  if (!term) return text;
+  const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`, "gi");
+  return text.replace(regex, '<mark class="kw-mark">$1</mark>');
+}
+
 function renderKeywords() {
   const el = document.getElementById("kw-table-body");
-  const k = tr[lang].keywords;
-  const term = (document.getElementById("kw-search")?.value || "").toLowerCase();
-  const filtered = keywords.filter(r =>
-    r.kw.toLowerCase().includes(term) ||
-    r.kwAr.includes(term)
-  );
-  el.innerHTML = filtered.map(r => {
+  const term = (document.getElementById("kw-search")?.value || "").trim();
+  let results;
+  if (!term) {
+    results = keywords.map(r => ({ item: r }));
+  } else if (fuse) {
+    results = fuse.search(term);
+  } else {
+    const t = term.toLowerCase();
+    results = keywords.filter(r => r.kw.toLowerCase().includes(t) || r.kwAr.includes(t)).map(r => ({ item: r }));
+  }
+  el.innerHTML = results.map(({ item: r }) => {
     const label = lang === "ar" ? r.kwAr : r.kw;
+    const displayLabel = term ? highlightText(label, term) : label;
     const diffClass = r.diff < 20 ? "kw-easy" : r.diff < 32 ? "kw-med" : "kw-hard";
-    return `<tr><td class="kw-word">${label}</td><td>${r.vol.toLocaleString()}</td><td><span class="kw-diff ${diffClass}">${r.diff}/100</span></td><td>${r.lang}</td></tr>`;
+    const barWidth = Math.max(2, 100 - r.diff);
+    return `<tr>
+      <td class="kw-word">${displayLabel}</td>
+      <td class="kw-vol">${r.vol.toLocaleString()}</td>
+      <td><span class="kw-diff ${diffClass}">${r.diff}/100</span><div class="kw-bar"><div class="kw-bar-fill ${diffClass}" style="width:${barWidth}%"></div></div></td>
+      <td class="kw-lang">${r.lang}</td>
+    </tr>`;
   }).join("");
-  document.getElementById("kw-count").textContent = `${filtered.length}/${keywords.length}`;
+  document.getElementById("kw-count").textContent = `${results.length}/${keywords.length}`;
 }
 
 function renderKeywordsSection() {
+  if (!fuse && !initFuse()) {
+    setTimeout(renderKeywordsSection, 200);
+    return;
+  }
   renderKeywords();
-  document.getElementById("kw-search").addEventListener("input", renderKeywords);
-  document.getElementById("kw-lang-label").textContent = document.querySelector("[data-i18n='keywords.colKeyword']")?.textContent || "Keyword";
+  const input = document.getElementById("kw-search");
+  input.addEventListener("input", renderKeywords);
+  input.placeholder = tr[lang].keywords.searchPlaceholder || "Search keyword...";
 }
 
 function updateWA() {
