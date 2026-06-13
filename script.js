@@ -247,3 +247,4 @@ renderCities();
 renderTestimonials();
 renderFAQ();
 renderContact();
+updateLang();
