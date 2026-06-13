@@ -149,6 +149,7 @@ button{cursor:pointer;font:inherit;background:none;border:none}
 [dir="rtl"] .product-size-badge{right:auto;left:12px}
 [dir="rtl"] .badges svg{margin-left:0;margin-right:0}
 [dir="rtl"] .hero-actions .btn svg{margin-left:0;margin-right:0}
+[dir="rtl"] .badges{justify-content:flex-start}
 
 @media(max-width:968px){
   .hero-in{grid-template-columns:1fr;gap:40px;text-align:center}

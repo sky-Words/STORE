@@ -1,11 +1,11 @@
 const PHONE = "212638631128";
 
 const products = [
-  { id: 1, size: "90×190 cm", sizeAr: "90×190 سم", price: 1150, image: "https://picsum.photos/seed/matelas90/600/400", badge: { fr: "Format individuel", ar: "مقاس فردي" } },
-  { id: 2, size: "140×190 cm", sizeAr: "140×190 سم", price: 2090, image: "https://picsum.photos/seed/matelas140/600/400", badge: { fr: "Format double", ar: "مقاس مزدوج" } },
-  { id: 3, size: "160×200 cm", sizeAr: "160×200 سم", price: 2390, image: "https://picsum.photos/seed/matelas160/600/400", badge: { fr: "Format queen", ar: "مقاس كوين" } },
-  { id: 4, size: "180×200 cm", sizeAr: "180×200 سم", price: 2790, image: "https://picsum.photos/seed/matelas180/600/400", badge: { fr: "Format king", ar: "مقاس كينغ" } },
-  { id: 5, size: "200×200 cm", sizeAr: "200×200 سم", price: 3690, image: "https://picsum.photos/seed/matelas200/600/400", badge: { fr: "Format king XXL", ar: "مقاس كينغ XXL" } },
+  { id: 1, size: "90×190 cm", sizeAr: "90×190 سم", price: 1150, image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&h=400&q=80", badge: { fr: "Format individuel", ar: "مقاس فردي" } },
+  { id: 2, size: "140×190 cm", sizeAr: "140×190 سم", price: 2090, image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&h=400&q=80", badge: { fr: "Format double", ar: "مقاس مزدوج" } },
+  { id: 3, size: "160×200 cm", sizeAr: "160×200 سم", price: 2390, image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&h=400&q=80", badge: { fr: "Format queen", ar: "مقاس كوين" } },
+  { id: 4, size: "180×200 cm", sizeAr: "180×200 سم", price: 2790, image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&h=400&q=80", badge: { fr: "Format king", ar: "مقاس كينغ" } },
+  { id: 5, size: "200×200 cm", sizeAr: "200×200 سم", price: 3690, image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&h=400&fit=crop&crop=top&q=80", badge: { fr: "Format king XXL", ar: "مقاس كينغ XXL" } },
 ];
 
 const tr = {
