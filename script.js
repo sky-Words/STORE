@@ -8,9 +8,42 @@ const products = [
   { id: 5, size: "200×200 cm", sizeAr: "200×200 سم", price: 3690, image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&h=400&fit=crop&crop=top&q=80", badge: { fr: "Format king XXL", ar: "مقاس كينغ XXL" } },
 ];
 
+const keywords = [
+  { kw: "matelas médical", kwAr: "مرتبة طبية", vol: 5400, diff: 28, lang: "FR/AR" },
+  { kw: "matelas italien Maroc", kwAr: "مرتبة إيطالية المغرب", vol: 4400, diff: 24, lang: "FR" },
+  { kw: "matelas Maroc", kwAr: "مرتبة المغرب", vol: 8800, diff: 42, lang: "FR/AR" },
+  { kw: "matelas roulé", kwAr: "مرتبة ملفوفة", vol: 3600, diff: 18, lang: "FR" },
+  { kw: "matelas mémoire de forme", kwAr: "مرتبة إسفنج ذاكرة", vol: 2900, diff: 35, lang: "FR" },
+  { kw: "matelas 140×190", kwAr: "مرتبة 140×190", vol: 6600, diff: 30, lang: "FR/AR" },
+  { kw: "matelas 160×200", kwAr: "مرتبة 160×200", vol: 5400, diff: 28, lang: "FR/AR" },
+  { kw: "matelas 180×200", kwAr: "مرتبة 180×200", vol: 3600, diff: 22, lang: "FR/AR" },
+  { kw: "matelas 90×190", kwAr: "مرتبة 90×190", vol: 2400, diff: 16, lang: "FR/AR" },
+  { kw: "matelas 200×200", kwAr: "مرتبة 200×200", vol: 1600, diff: 12, lang: "FR/AR" },
+  { kw: "matelas orthopédique", kwAr: "مرتبة تقويمية", vol: 3200, diff: 32, lang: "FR" },
+  { kw: "matelas dos", kwAr: "مرتبة للظهر", vol: 2800, diff: 26, lang: "FR/AR" },
+  { kw: "matelas ferme", kwAr: "مرتبة صلبة", vol: 2200, diff: 20, lang: "FR" },
+  { kw: "matelas pas cher Maroc", kwAr: "مرتبة رخيصة المغرب", vol: 4800, diff: 38, lang: "FR/AR" },
+  { kw: "acheter matelas en ligne Maroc", kwAr: "شراء مرتبة أونلاين المغرب", vol: 2400, diff: 30, lang: "FR/AR" },
+  { kw: "matelas italia", kwAr: "مرتبة إيطاليا", vol: 3900, diff: 20, lang: "FR/AR" },
+  { kw: "matelas médical italien", kwAr: "مرتبة طبية إيطالية", vol: 2900, diff: 22, lang: "FR/AR" },
+  { kw: "matelas hôtel Maroc", kwAr: "مرتبة فندق المغرب", vol: 1800, diff: 14, lang: "FR" },
+  { kw: "matelas livraison gratuite", kwAr: "مرتبة توصيل مجاني", vol: 3400, diff: 34, lang: "FR/AR" },
+  { kw: "matelas épais", kwAr: "مرتبة سميكة", vol: 1300, diff: 10, lang: "FR" },
+  { kw: "matelas anti-acarien", kwAr: "مرتبة مضادة للعث", vol: 1600, diff: 16, lang: "FR" },
+  { kw: "matelas 1 place Maroc", kwAr: "مرتبة فردي المغرب", vol: 2200, diff: 14, lang: "FR/AR" },
+  { kw: "matelas 2 places Maroc", kwAr: "مرتبة مزدوجة المغرب", vol: 3600, diff: 22, lang: "FR/AR" },
+  { kw: "matelas queen size Maroc", kwAr: "مرتبة كوين المغرب", vol: 1900, diff: 18, lang: "FR/AR" },
+  { kw: "matelas king size Maroc", kwAr: "مرتبة كينغ المغرب", vol: 2400, diff: 20, lang: "FR/AR" },
+  { kw: "literie Maroc", kwAr: "فرش السرير المغرب", vol: 4800, diff: 36, lang: "FR/AR" },
+  { kw: "matelas mousse Maroc", kwAr: "مرتبة إسفنج المغرب", vol: 2600, diff: 20, lang: "FR" },
+  { kw: "meilleur matelas Maroc", kwAr: "أفضل مرتبة المغرب", vol: 3200, diff: 34, lang: "FR/AR" },
+  { kw: "matelas remboursable", kwAr: "مرتبة قابلة للإرجاع", vol: 1200, diff: 8, lang: "FR" },
+  { kw: "prix matelas Maroc", kwAr: "سعر المرتبة المغرب", vol: 4400, diff: 30, lang: "FR/AR" },
+];
+
 const tr = {
   fr: {
-    nav: { produits: "Produits", caracteristiques: "Caractéristiques", livraison: "Livraison", faq: "FAQ", contact: "Contact", commander: "Commander" },
+    nav: { produits: "Produits", caracteristiques: "Caractéristiques", livraison: "Livraison", motscles: "Mots-clés", faq: "FAQ", contact: "Contact", commander: "Commander" },
     hero: { title: "Le secret des nuits sans fin", desc: "Des matelas d'exception pour un sommeil profond, réparateur et confortable.", btn1: "Commander sur WhatsApp", btn2: "Appeler Maintenant" },
     trust: ["Garantie 10 ans", "Livraison gratuite partout au Maroc", "Paiement à la livraison", "Confort mi-ferme / ferme", "Qualité supérieure", "Service client réactif"],
     hs1: "100% Paiement livraison", hs2: "Garantie 10 ans", hs3: "Livraison gratuite Maroc", hs4: "Confort mi-ferme / ferme",
@@ -36,6 +69,7 @@ const tr = {
       { name: "Nadia L.", city: "Tanger", text: "Après des années à galérer, le 140×190 de MATLETY a changé ma vie. Vraiment confortable." },
       { name: "Hicham E.", city: "Agadir", text: "Je suis sportif et j'avais besoin d'un bon soutien. Le MATLETY 90×190 est parfait." },
     ],
+    keywords: { tag: "Mots-clés", title: "Recherche de mots-clés marché Maroc", desc: "Analyse des termes recherchés par vos clients au Maroc pour le marché du matelas.", searchPlaceholder: "Rechercher un mot-clé…", colKeyword: "Mot-clé", colVol: "Volume/mois", colDiff: "Difficulté", colLang: "Langue" },
     faq: { tag: "FAQ", title: "Questions fréquentes", desc: "Tout ce que vous devez savoir avant de commander." },
     faqList: [
       { q: "Puis-je payer à la livraison ?", a: "Oui, le paiement s'effectue à la réception du matelas. Vous ne payez qu'après avoir reçu et vérifié votre commande." },
@@ -51,7 +85,7 @@ const tr = {
     waFloat: "Commander sur WhatsApp",
   },
   ar: {
-    nav: { produits: "المنتجات", caracteristiques: "المميزات", livraison: "التوصيل", faq: "الأسئلة", contact: "اتصل بنا", commander: "اطلب الآن" },
+    nav: { produits: "المنتجات", caracteristiques: "المميزات", livraison: "التوصيل", motscles: "كلمات مفتاحية", faq: "الأسئلة", contact: "اتصل بنا", commander: "اطلب الآن" },
     hero: { title: "سر الليالي التي لا تنتهي", desc: "مراتب استثنائية لنوم عميق ومريح.", btn1: "اطلب عبر واتساب", btn2: "اتصل الآن" },
     trust: ["ضمان 10 سنوات", "توصيل مجاني لجميع المغرب", "الدفع عند الاستلام", "راحة متوسطة/ثابتة", "جودة فائقة", "خدمة عملاء سريعة"],
     hs1: "100% دفع عند الاستلام", hs2: "ضمان 10 سنوات", hs3: "توصيل مجاني المغرب", hs4: "راحة متوسطة/ثابتة",
@@ -77,6 +111,7 @@ const tr = {
       { name: "نادية ل.", city: "طنجة", text: "بعد سنوات من المعاناة، مرتبة 140×190 من MATLETY غيرت حياتي." },
       { name: "هشام E.", city: "أكادير", text: "أنا رياضي وأحتاج دعماً جيداً. مرتبة MATLETY 90×190 مثالية." },
     ],
+    keywords: { tag: "كلمات مفتاحية", title: "بحث الكلمات المفتاحية سوق المغرب", desc: "تحليل المصطلحات التي يبحث عنها عملاؤك في المغرب لسوق المراتب.", searchPlaceholder: "ابحث عن كلمة مفتاحية…", colKeyword: "الكلمة المفتاحية", colVol: "بحث/شهر", colDiff: "الصعوبة", colLang: "اللغة" },
     faq: { tag: "الأسئلة", title: "أسئلة متكررة", desc: "كل ما تريد معرفته قبل الطلب." },
     faqList: [
       { q: "هل يمكن الدفع عند الاستلام؟", a: "نعم، يتم الدفع عند استلام المرتبة. تدفع فقط بعد استلام الطلب." },
@@ -203,6 +238,28 @@ function renderContact() {
     </div>`;
 }
 
+function renderKeywords() {
+  const el = document.getElementById("kw-table-body");
+  const k = tr[lang].keywords;
+  const term = (document.getElementById("kw-search")?.value || "").toLowerCase();
+  const filtered = keywords.filter(r =>
+    r.kw.toLowerCase().includes(term) ||
+    r.kwAr.includes(term)
+  );
+  el.innerHTML = filtered.map(r => {
+    const label = lang === "ar" ? r.kwAr : r.kw;
+    const diffClass = r.diff < 20 ? "kw-easy" : r.diff < 32 ? "kw-med" : "kw-hard";
+    return `<tr><td class="kw-word">${label}</td><td>${r.vol.toLocaleString()}</td><td><span class="kw-diff ${diffClass}">${r.diff}/100</span></td><td>${r.lang}</td></tr>`;
+  }).join("");
+  document.getElementById("kw-count").textContent = `${filtered.length}/${keywords.length}`;
+}
+
+function renderKeywordsSection() {
+  renderKeywords();
+  document.getElementById("kw-search").addEventListener("input", renderKeywords);
+  document.getElementById("kw-lang-label").textContent = document.querySelector("[data-i18n='keywords.colKeyword']")?.textContent || "Keyword";
+}
+
 function updateWA() {
   document.querySelectorAll('.nav-wa, .wa-sticky-bar a, .cta-banner a, .hero-actions a:first-child, .delivery-content a, .footer-wa a').forEach(a => {
     if (!a.closest('.hero-actions') && !a.classList.contains('btn-gold')) {
@@ -236,6 +293,7 @@ function toggleLang() {
   renderTestimonials();
   renderFAQ();
   renderContact();
+  renderKeywordsSection();
   updateWA();
   updateLang();
 }
@@ -247,4 +305,5 @@ renderCities();
 renderTestimonials();
 renderFAQ();
 renderContact();
+renderKeywordsSection();
 updateLang();

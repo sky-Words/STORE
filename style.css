@@ -150,6 +150,23 @@ button{cursor:pointer;font:inherit;background:none;border:none}
 [dir="rtl"] .badges svg{margin-left:0;margin-right:0}
 [dir="rtl"] .hero-actions .btn svg{margin-left:0;margin-right:0}
 [dir="rtl"] .badges{justify-content:flex-start}
+.kw-controls{display:flex;align-items:center;gap:12px;margin-bottom:20px;max-width:400px}
+.kw-search{flex:1;padding:12px 16px;border:2px solid var(--b);border-radius:8px;font-size:.9rem;font-family:var(--font);outline:none;transition:border-color .2s}
+.kw-search:focus{border-color:var(--tl)}
+.kw-counter{font-size:.8rem;color:var(--t2);font-weight:600;white-space:nowrap}
+.kw-table-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--b)}
+.kw-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.kw-table th{padding:12px 16px;text-align:left;background:var(--nv);color:var(--w);font-weight:600;white-space:nowrap}
+.kw-table td{padding:10px 16px;border-bottom:1px solid var(--g2)}
+.kw-table tr:last-child td{border-bottom:none}
+.kw-table tr:hover td{background:rgba(26,167,161,.04)}
+.kw-word{font-weight:600;color:var(--nv)}
+.kw-diff{display:inline-block;padding:2px 10px;border-radius:4px;font-weight:600;font-size:.75rem}
+.kw-easy{background:rgba(26,167,161,.12);color:var(--tl)}
+.kw-med{background:rgba(212,175,55,.12);color:#a08400}
+.kw-hard{background:rgba(220,53,69,.1);color:#dc3545}
+[dir="rtl"] .kw-table th{text-align:right}
+[dir="rtl"] .kw-search{direction:rtl}
 
 @media(max-width:968px){
   .hero-in{grid-template-columns:1fr;gap:40px;text-align:center}
@@ -195,4 +212,7 @@ button{cursor:pointer;font:inherit;background:none;border:none}
   .hero-price-badge{font-size:.72rem;padding:6px 12px;bottom:10px;left:10px}
   .hero-price-badge strong{font-size:.9rem}
   [dir="rtl"] .hero-price-badge{left:auto;right:10px}
+  .kw-table{font-size:.78rem}
+  .kw-table th,.kw-table td{padding:8px 10px}
+  .kw-controls{max-width:100%}
 }
